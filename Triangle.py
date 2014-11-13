@@ -15,7 +15,7 @@ class Triangle:
     # get the area of the triangle
     def get_area(self):
         s_var = (self.__side_a + self.__side_b + self.__side_c)/2
-        return math.sqrt(s_var(s_var - self.__side_a)(s_var - self.__side_b)(s_var - self.__side_c))
+        return math.sqrt((s_var)*(s_var - self.__side_a)*(s_var - self.__side_b)*(s_var - self.__side_c))
 
     # get side a
     def get_side_a(self):

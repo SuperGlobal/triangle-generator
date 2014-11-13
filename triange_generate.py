@@ -2,8 +2,26 @@ from Triangle import Triangle
 import random
 
 def main():
-    valid_triangle = determine_triangle()
-    print(Triangle(valid_triangle[0], valid_triangle[1], valid_triangle[2]))
+    generate_triangles(25)
+
+# generate n number of triangles and find average, smallest and largest.
+def generate_triangles(n_amount):
+    average_a = 0
+    average_b = 0
+    average_c = 0
+    valid_triangle = [ 'none' ] * n_amount
+    for i in range(n_amount):
+        valid_triangle[i] = determine_triangle()
+        triangle_class = Triangle(valid_triangle[i][0], valid_triangle[i][1], valid_triangle[i][2])
+        average_a = average_a + triangle_class.get_side_a()
+        average_b = average_b + triangle_class.get_side_b()
+        average_c = average_c + triangle_class.get_side_c()
+        print(Triangle(valid_triangle[i][0], valid_triangle[i][1], valid_triangle[i][2]))
+    average_a = average_a/n_amount
+    average_b = average_b/n_amount
+    average_c = average_c/n_amount
+    print(average_a, average_b, average_c)
+    return valid_triangle
 
 # generates a list of random numbers
 def generate_list():
